@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script>
     <title>yubinbangoを使用した住所検索</title>
 </head>
 <body>
     <h2>住所検索フォーム</h2>
-    <form>
+    <form class="h-adr">
+        <!-- 住所検索で必要なもの -->
+        <span class="p-country-name" style="display: none;">Japan</span>
         <div>
             <label for="zip">郵便番号</label>
-            <input id="zip" type="text" placeholder="111-1111">
+            <input id="zip" class="p-postal-code" type="text" placeholder="111-1111">
             <button>住所検索</button>
         </div>
         <div>
             <label for="address">住所</label>
-            <input id="address" type="text" placeholder="住所">
+            <input id="address" class="p-region p-locality p-street-address p-extended-address" type="text" placeholder="住所">
         </div>
     </form>
 </body>
