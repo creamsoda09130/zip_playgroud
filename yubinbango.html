@@ -14,12 +14,17 @@
         <span class="p-country-name" style="display: none;">Japan</span>
         <div>
             <label for="zip">郵便番号</label>
-            <input id="zip" class="p-postal-code" type="text" placeholder="111-1111">
+            <input id="zip" class="p-postal-code" type="text" placeholder="111">
+            <span>-</span>
+            <input class="p-postal-code" type="text" placeholder="111">
             <button>住所検索</button>
         </div>
         <div>
             <label for="address">住所</label>
-            <input id="address" class="p-region p-locality p-street-address p-extended-address" type="text" placeholder="住所">
+            <input id="address" class="p-region" type="text" placeholder="都道府県">
+            <input class="p-locality p-street-address" type="text" placeholder="市区町村">
+            <input class="p-extended-address" type="text" placeholder="丁目番地">
+            <input class="p-extended-address" type="text" placeholder="ビル・マンション名・部屋番号">
         </div>
     </form>
 </body>
