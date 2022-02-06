@@ -7,6 +7,7 @@
     <!-- <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script> -->
     <script src="jquery.min.js" charset="UTF-8"></script>
     <script src="yubinbango.js" charset="UTF-8"></script>
+    <!-- <script src="yubinbangoCOPY.js" charset="UTF-8"></script> -->
     <title>yubinbangoを使用した住所検索</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
             <input id="zip" class="p-postal-code" type="text" placeholder="111">
             <span>-</span>
             <input class="p-postal-code" type="text" placeholder="111">
-            <button class="postal-search" type="button" onclick="searchAddress($(this))">住所検索</button>
+            <button class="postal-search" type="button" onclick="searchAddress($(this),t,n)">住所検索</button>
         </div>
         <div>
             <label for="address">住所</label>
@@ -70,7 +71,20 @@
     postalField.addEventListener("keyup", onKeyupCanceller, false);
     */
 })();
-      function searchAddress($button) {
+      function searchAddress($button,t,n,yubinbango='ここ何も入ってない') {
+        // console.log(t)
+        // console.log(n)
+
+        // console.log(YubinBango.Core.prototype.i) // こういうのは取ってこれる
+        // console.log(YubinBango.Core.prototype.j)
+        // console.log(YubinBango.Core.prototype.p)
+        console.log(YubinBango.Core)
+        console.log(g)
+        // console.log(typeof(YubinBango.Core)) // function
+
+        // TASK: 都道府県リストをyubinbango.jsから取得できるか(多分無理))
+
+        // console.log(yubinbango)
         //キャンセルを解除
         cancelFlag = false;
         var postalcode = $('.p-postal-code');
