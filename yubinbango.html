@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script src="https://yubinbango.github.io/yubinbango/yubinbango.js" charset="UTF-8"></script> -->
+    <script src="jquery.min.js" charset="UTF-8"></script>
     <script src="yubinbango.js" charset="UTF-8"></script>
     <title>yubinbangoを使用した住所検索</title>
 </head>
@@ -18,7 +19,7 @@
             <input id="zip" class="p-postal-code" type="text" placeholder="111">
             <span>-</span>
             <input class="p-postal-code" type="text" placeholder="111">
-            <button class="postal-search" type="button">住所検索</button>
+            <button class="postal-search" type="button" onclick="searchAddress($(this))">住所検索</button>
         </div>
         <div>
             <label for="address">住所</label>
@@ -31,10 +32,18 @@
     <hr>
     <h2>使ってみてのメモ</h2>
     <ul>
-        <li>自動挿入は楽</li>
-        <li>ボタンで発火できるのか気になる</li>
-        <li>住所がない場合の表示どうする??</li>
-        <li>郵便番号と住所の整合性が取れているか確認</li>
+      <div>
+        <input type="checkbox" name="" id="" checked>自動挿入
+      </div>
+      <div>
+        <input type="checkbox" name="" id="" checked>ボタンで挿入
+      </div>
+      <div>
+        <input type="checkbox" name="" id="">住所ない場合は??
+      </div>
+      <div>
+        <input type="checkbox" name="" id="">整合性は??
+      </div>
     </ul>
     <script>
 (function() {
@@ -60,12 +69,12 @@
     /*
     postalField.addEventListener("keyup", onKeyupCanceller, false);
     */
-
-    //ボタンクリック時
-    var btn = hadr.querySelector(".postal-search");
-    btn.addEventListener("click", function(e) {
+})();
+      function searchAddress($button) {
         //キャンセルを解除
         cancelFlag = false;
+        var postalcode = $('.p-postal-code');
+        var postalField = postalcode[postalcode.length - 1];
 
         //発火
         let event;
@@ -79,8 +88,7 @@
 
         //キャンセルを戻す
         cancelFlag = true;
-    });
-})();
+      }
     </script>
 </body>
 </html>
